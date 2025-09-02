@@ -20,6 +20,8 @@ class AdminSignupView(generics.CreateAPIView):
     permission_classes=[AllowAny]
 
 class LoginView(TokenObtainPairView):
+   
+
     """
     Takes email + password and returns access & refresh tokens
     """

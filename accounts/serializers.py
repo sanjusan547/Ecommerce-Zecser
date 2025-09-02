@@ -133,3 +133,4 @@ class ResetPasswordserializer(serializers.Serializer):
         otp_record.save()
 
         return {"message": "Password reset successful"}
+    
