@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'accounts',
     'product',
-    'cart'
+    'cart',
+    'order'
 ]
 
 MIDDLEWARE = [
@@ -162,3 +163,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Use an App Password for Gmail
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+RAZORPAY_KEY_ID =config('RAZORPAY_KEY_ID')
+RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET')

@@ -27,6 +27,15 @@ class AddToCartView(generics.CreateAPIView):
         variant_id = request.data.get('product_id')
         quantity = request.data.get('quantity', 1)
         variant = Productvariant.objects.get(id=variant_id)
+         # Check stock
+        existing_item = Cartitem.objects.filter(cart=cart, product=variant).first()
+        current_quantity_in_cart = existing_item.quantity if existing_item else 0
+
+        if current_quantity_in_cart + quantity > variant.stock:
+            return Response(
+                {"detail": f"Cannot add {quantity} items. Only {variant.stock - current_quantity_in_cart} left in stock."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         item, created = Cartitem.objects.get_or_create(cart=cart, product=variant)
         if not created:
