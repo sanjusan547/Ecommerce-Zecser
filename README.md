@@ -34,8 +34,8 @@ Razorpay API for payments
 
 Project Setup
 1️⃣ Clone the repository
-git clone https://github.com/yourusername/ecommerce-project.git
-cd ecommerce-project
+git clone https://github.com/yourusername/ecommerce-Zecser.git
+
 
 2️⃣ Create a virtual environment
 python -m venv env
